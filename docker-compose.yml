@@ -3,9 +3,8 @@ services:
   cloud9:
     image: akirax/cloud9
     volumes:
-      - workspace:/$INSTALL_PATH
+      - workspace:/app
     environment:
-      INSTALL_PATH: /teste
       USERNAME: user
       PASSWORD: pass
     ports:
