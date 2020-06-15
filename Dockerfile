@@ -6,10 +6,10 @@ ENV INSTALL_PATH /app
 RUN apk add --update --no-cache \
         bash git nodejs make gcc g++ python3 curl wget build-base \
         openssl-dev apache2-utils libxml2-dev sshfs tmux supervisor npm \
-        binutils-gold build-base curl file g++ gcc git less libstdc++ \
+        binutils-gold build-base curl file gcc git less libstdc++ \
         libffi-dev libc-dev linux-headers libxml2-dev libxslt-dev \
         libgcrypt-dev make netcat-openbsd nodejs openssl pkgconfig \
-        postgresql-dev python tzdata yarn imagemagick \
+        postgresql-dev tzdata yarn imagemagick \
     && rm -f /var/cache/apk/* \
     && git clone https://github.com/c9/core.git /c9 \
     && curl -s -L https://raw.githubusercontent.com/c9/install/master/link.sh | bash \
