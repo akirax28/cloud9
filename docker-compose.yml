@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  cloud9:
+    image: akirax/cloud9
+    volumes:
+      - workspace:/workspace
+    environment:
+      USERNAME: user
+      PASSWORD: pass
+    ports:
+      - "8080:8080"
+
+volumes:
+  workspace:
