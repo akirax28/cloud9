@@ -13,7 +13,7 @@ RUN apk add --update --no-cache \
     && rm -f /var/cache/apk/* \
     && git clone https://github.com/c9/core.git /c9 \
     && curl -s -L https://raw.githubusercontent.com/c9/install/master/link.sh | bash \
-    && mkdir -p $INSTALL_PATH workdir \
+    && mkdir -p $INSTALL_PATH \
     && cd c9\
     && ./scripts/install-sdk.sh
 
