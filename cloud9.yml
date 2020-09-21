@@ -1,0 +1,31 @@
+#·vim:·set·relativenumber·nonu·shiftwidth=2·tabstop=2·softtabstop=-1·expandtab:
+version: '3.8'
+
+services:
+  cloud9:
+    image: linuxserver/cloud9
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Boa_Vista
+      - USERNAME=akira
+      - PASSWORD=123
+    volumes:
+      - work:/code
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9099:8000
+    deploy:
+      placement:
+        constraints:
+          - node.labels.tipo == teste
+      resources:
+        limits:
+          memory: 256M
+          cpus: '2.0'
+volumes:
+  work:
+    driver_opts:
+      o: bind
+      type: none
+      device: /data/gits
